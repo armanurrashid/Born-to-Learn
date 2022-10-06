@@ -2,10 +2,8 @@
 <link rel="stylesheet" href="../css//landingpage.css">
 <style>
     body {
-        background-image: url('../images//back5.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
+        background: url("../images//back5.jpg") no-repeat center center fixed;
+        background-color: #7e8b93;
         font-family: 'poppins', sans-serif;
     }
 

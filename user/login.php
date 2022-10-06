@@ -1,16 +1,29 @@
 <?php include "../assets/header.php";  ?>
-<link rel="stylesheet" href="../css//login.css">
+<link rel="stylesheet" href="login.css">
 </head>
-<div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
-    <h3>Sign in here</h3>
-    <form action="#" method="post">
-        <div class="inputBox"> <input id="uname" type="email" name="email" placeholder="User email" require>
-            <input id="pass" type="password" name="Password" placeholder="Password">
-        </div> <input type="submit" name="" value="Login">
-    </form>
-    <a href="#">Forget Password<br> </a>
-    <div class="text-center">
-        <p style="color: #59238F;">Sign-Up</p>
-    </div>
 
-</div>
+<body>
+    <div class="box">
+        <div class="form">
+            <h2>Sign in</h2>
+            <div class="inputBox">
+                <input type="email" required="required">
+                <span>email</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="#">Forgot Password</a>
+                <a href="#">Sign up</a>
+            </div><br />
+            <div class="d-flex justify-content-around">
+                <input type="submit" value="Login">
+            </div>
+
+        </div>
+    </div>
+</body>
