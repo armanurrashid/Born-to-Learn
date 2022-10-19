@@ -2,9 +2,14 @@
 <link rel="stylesheet" href="../css//landingpage.css">
 <style>
     body {
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; */
         background: url("../images//back5.jpg") no-repeat center center fixed;
         background-color: #7e8b93;
         font-family: 'poppins', sans-serif;
+
     }
 
     .text-box h1 {
