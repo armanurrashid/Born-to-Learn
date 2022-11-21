@@ -1,106 +1,50 @@
-<link rel="stylesheet" href="../css//style.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css//sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
 
 <body>
-    <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="logo-apple"></ion-icon>
-                        </span>
-                        <span class="title">Born to Learn</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Customers</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                        </span>
-                        <span class="title">Message</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="help-outline"></ion-icon>
-                        </span>
-                        <span class="title">Help</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Setting</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Password</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </span>
-                        <span class="title">Sign out</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="main">
-            <div class="topbar">
-                <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
+    <input type="checkbox" id="check">
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+            <div class="left_area">
+                <h3>Born to <span>Learn</span></h3>
             </div>
-        </div>
+            <div class="right_area">
+                <a href="#" class="logout_btn">Logout</a>
+            </div>
+    </header>
+
+    <div class="sidebar">
+        <!-- <center>
+            <img src="back4.jpg" alt="" class="profile_image">
+            <h4>Jessica</h4>
+        </center> -->
+        <!--         
+        <label for="check">
+            
+        <i class="fas fa-bars" id="sidebar_btn"></i> -->
+
+
+        <a href="#"> <i class="fa-solid fa-person-chalkboard"></i><span>Teachers</span></a>
+        <a href="#"> <i class="fa-solid fa-users"></i><span>Students</span></a>
+        <a href="#"> <i class="fa-solid fa-user-injured"></i><span>Office Staffs</span></a>
+        <a href="#"> <i class="fas fa-th"></i><span>Courses</span></a>
+        <a href="#"> <i class="fa-solid fa-book-open-reader"></i></i><span>Assigned Courses</span></a>
+        <a href="#"> <i class="fa-solid fa-hand"></i><span>Attendance</span></a>
+        <a href="#"> <i class="fa-solid fa-sheet-plastic"></i> <span>Mark Sheet</span></a>
+        <a href="#"> <i class="fa-solid fa-chart-column"></i><span>Performance</span></a>
     </div>
-
-    <script>
-        let toggle = document.querySelector('.toggle');
-        let navigation = document.querySelector('.navigation');
-        let main = document.querySelector('.main');
-
-        toggle.onclick = function() {
-            navigation.classList.toggle('active');
-            main.classList.toggle('active');
-        }
-
-
-        let List = document.querySelectorAll('.navigation li');
-
-        function activeLink() {
-            List.forEach((item) =>
-                item.classList.remove('hovered'));
-            this.classList.add('hovered');
-        }
-        List.forEach((item) =>
-            item.addEventListener('mouseover', activeLink));
-    </script>
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <div class="content"></div>
 </body>
+
+</html>

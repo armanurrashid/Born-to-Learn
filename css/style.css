@@ -7,7 +7,7 @@
 }
 
 :root {
-    --blue: #287bff;
+    --blue: #112551;
     --white: #fff;
     --grey: #f5f5f5;
     --black1: #222;
@@ -61,7 +61,7 @@ body {
 }
 
 .navigation ul li:nth-child(1) {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     pointer-events: none;
 }
 
@@ -93,6 +93,10 @@ body {
 }
 
 .navigation ul li a .icon ion-icon {
+    font-size: 1.75em;
+}
+
+.navigation ul li a .icon i {
     font-size: 1.75em;
 }
 
