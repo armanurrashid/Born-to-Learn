@@ -1,0 +1,116 @@
+body {
+    /* margin-top: 10px; */
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.team-area {
+    padding: 95px 0 0 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-container {
+    width: 900px;
+    height: auto;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.single-img {
+    border-radius: 5px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    width: 180px;
+    height: 185px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: translate(0, 0);
+    transition: 0ss;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.single-img:hover {
+    transform: translate(0, -9px);
+}
+
+
+/* .img-one {
+    background-image: url("../images//back4.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+} */
+
+
+/* 
+.img-two {
+    background-image: url("..//images//back5.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+} */
+
+
+/* .img-three {
+    background-image: url("//images/back.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+} */
+
+.img-text {
+    background: #fff;
+    padding: 0 10px 5px 0px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    transform: translate(0, 85px);
+    line-height: 24px;
+    transition: 0.5s ease;
+    display: inline-block;
+}
+
+.img-text p {
+    text-align: center;
+}
+
+.img-text p i {
+    /* padding: 0 0 0 35px; */
+    /* text-align: center; */
+    padding: 0 10px 0 10px;
+}
+
+.img-text h4 {
+    text-align: center;
+    line-height: 16px;
+    padding: 0;
+    margin: 16px 0;
+    font-family: big john;
+}
+
+.single-img:hover .img-text {
+    transform: translate(0, 0);
+}
