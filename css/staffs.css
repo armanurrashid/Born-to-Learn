@@ -48,9 +48,10 @@ a {
     background-position: center center;
 }
 
-.single-img:hover {
+
+/* .single-img:hover {
     transform: translate(0, -9px);
-}
+} */
 
 
 /* .img-one {
@@ -105,8 +106,4 @@ a {
     padding: 0;
     margin: 16px 0;
     font-family: big john;
-}
-
-.single-img:hover .img-text {
-    transform: translate(0, 0);
 }

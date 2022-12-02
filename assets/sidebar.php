@@ -39,10 +39,10 @@
         <i class="fas fa-bars" id="sidebar_btn"></i> -->
 
 
-        <a href="#"> <i class="fa-solid fa-person-chalkboard"></i><span>Teachers</span></a>
+        <a href="../General/teachers.php" title="Teachers"> <i class="fa-solid fa-person-chalkboard"></i><span>Teachers</span></a>
         <a href="#"> <i class="fa-solid fa-users"></i><span>Students</span></a>
         <a href="#"> <i class="fa-solid fa-user-injured"></i><span>Office Staffs</span></a>
-        <a href="#"> <i class="fas fa-th"></i><span>Courses</span></a>
+        <a href="../General/courses.php"> <i class="fas fa-th"></i><span>Courses</span></a>
         <a href="#"> <i class="fa-solid fa-book-open-reader"></i></i><span>Assigned Courses</span></a>
         <a href="#"> <i class="fa-solid fa-hand"></i><span>Attendance</span></a>
         <a href="#"> <i class="fa-solid fa-sheet-plastic"></i> <span>Mark Sheet</span></a>
