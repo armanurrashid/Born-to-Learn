@@ -17,12 +17,17 @@
                 <i></i>
             </div>
             <div class="links">
+                <a href="#"></a>
                 <a href="#">Forgot Password</a>
-                <a href="#">Sign up</a>
             </div><br />
             <div class="d-flex justify-content-around">
-                <input type="submit" value="Login">
+                <input type="submit" class="btn btn-sm" value="Login" onclick="window.location.href='../General/teachers.php'">
             </div>
+            <!-- <div class="d-flex justify-content-around">
+                <a href="../General/teachers.php" class="btn btn-sm">Login<svg>
+                        <rect></rect>
+                    </svg>4th Semester</a>
+            </div> -->
 
         </div>
     </div>
