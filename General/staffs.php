@@ -9,9 +9,9 @@ include '../assets/sidebar.php';
     <div class="team-container">
         <div class="staff1" style="margin-left: 38%;">
             <a href="#">
-                <span class="single-img" style="background-image:url(../images//ifti.jpg) ;">
+                <span class="single-img" style="background-image:url(../images//kmbabu.jpg) ;">
                     <span class="img-text">
-                        <h4>Alauddin</h4>
+                        <h6>Alauddin</h6>
                         <p>Section Officer</p>
                         <p>
                             <i class="fa-brands fa-facebook"></i>
@@ -30,9 +30,9 @@ include '../assets/sidebar.php';
         <div class="staff2" style="display: flex;">
             <div class="babuVhai" style="margin: 0px 90px;">
                 <a href="#">
-                    <span class="single-img" style="background-image:url(../images//dipok.jpg) ;">
+                    <span class="single-img" style="background-image:url(../images//kmbabu.jpg) ;">
                         <span class="img-text">
-                            <h4>KM Babu</h4>
+                            <h6>KM Babu</h6>
                             <p>Computer Operator</p>
                             <p>
                                 <i class="fa-brands fa-facebook"></i>
@@ -46,9 +46,9 @@ include '../assets/sidebar.php';
             </div>
             <div class="mahfuzVhai" style="margin-left:240px;">
                 <a href="#">
-                    <span class="single-img" style="background-image:url(../images//tasniya.jpg) ;">
+                    <span class="single-img" style="background-image:url(../images//kmbabu.jpg) ;">
                         <span class="img-text">
-                            <h4>Mahfujur Rahman</h4>
+                            <h6>Mahfujur Rahman</h6>
                             <p>Office Assistant</p>
                             <p>
                                 <i class="fa-brands fa-facebook"></i>
