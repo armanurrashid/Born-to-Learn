@@ -1,14 +1,17 @@
-/* a {
-    text-decoration: none;
-    color: #333;
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
 } */
 
-body {
-    background-image: url("..//images//back5.jpg");
+.team-container a {
+    text-decoration: none;
+    color: #333;
 }
 
 .team-area {
-    padding: 55px 0 0 0;
+    padding: 150px 0 0 20px;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -18,260 +21,173 @@ body {
     justify-content: center;
 }
 
-.team-container {
-    width: 900px;
-    height: auto;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+.team-area .team-container .cards {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    background: #333;
+    transition: 0.5s;
+}
+
+.team-area .team-container .cards:hover {
+    height: 260px;
+}
+
+.team-area .team-container .cards .lines {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.team-area .team-container .cards .lines::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 120px;
+    background: linear-gradient( transparent, #45f3ff, #45f3ff, #45f3ff, transparent);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.team-area .team-container .cards .lines::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+
+.team-area .team-container .cards .imgBX {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #000;
+    transition: 0.5s;
+    z-index: 5;
+    overflow: hidden;
+    /* background: linear-gradient( transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent); */
 }
 
 
 /* 
-.single-img {
-    border-radius: 5px;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-    width: 180px;
-    height: 185px;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transform: translate(0, 0);
-    transition: 0ss;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-}
+.team-area .team-container .cards:hover .imgBX {
+    width: 250px;
+    height: 250px;
+} */
 
-.img-text {
-    padding: 1px 10px 5px 0px;
-    width: 100%;
-    height: auto;
-    position: relative;
-    line-height: 24px;
-    transition: 0.5s ease;
-    display: inline-block;
-    transform: translate(0, 0);
-}
-
-.team-container a {
-    background-color: #2f323a;
-    width: 20%;
-    height: 30%;
+.team-area .team-container .cards .imgBX::before {
+    content: "";
     position: absolute;
-    top: 30%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 100px;
     transform: translate(-50%, -50%);
-    padding: 15px 30px;
-    text-decoration: none;
-    color: #2f323a;
-    letter-spacing: 2px;
-    font-size: 20px;
+    background: linear-gradient( transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+    animation: animate2 6s linear infinite;
 }
 
-.team-container a:before {
+@keyframes animate2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+.team-area .team-container .cards .imgBX::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #1dc4e7;
-    z-index: -1;
-    transition: transform 0.5s;
-    transform-origin: bottom right;
-    transform: scale(0);
+    inset: 3px;
+    background: #292929;
 }
 
-.team-container a:hover:before {
-    transition: transform 0.5s;
-    transform-origin: top left;
-    transform: scale(1);
-}
-
-.team-container a:after {
-    content: "";
+.team-area .team-container .cards .imgBX img {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+}
+
+.team-area .team-container .cards .contents {
+    position: absolute;
     width: 100%;
     height: 100%;
-    background: transparent;
-    border: 2px solid #fff;
-    box-sizing: border-box;
-    z-index: -1;
-    transition: transform 0.5s;
-    transform-origin: top left;
-    transform: scale(1);
-}
-
-.team-container a:hover:after {
-    transition: transform 0.5s;
-    transform-origin: bottom right;
-    transform: scale(0);
-}
-
-.img-text h6 {
-    color: #fff;
-    border: 2px solid;
-    text-align: center;
-    line-height: 11px;
-    padding: 10px;
-    margin: 10px 0;
-    font-family: big john;
-} */
-
-
-/* Trail start */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.team .member {
-    position: relative;
-    padding: 30px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    background: #fff;
-}
-
-.team .member .teampic {
-    /* margin-top: 3%;
-    overflow: hidden;
-    width: 160px;
-    height: 120px;
-    border-radius: 50%; */
-    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
+    align-items: flex-end;
+    overflow: hidden;
 }
 
-.team .member .teampic img {
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    background-color: black;
+.team-area .team-container .cards .contents .details {
+    padding: 10px 40px;
+    /* padding-top: 5px; */
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(115px);
 }
 
-.team .member .member-info {
-    margin-top: 0px;
-    padding-left: 25px;
+.team-area .team-container .cards:hover .contents .details {
+    transform: translateY(5px);
 }
 
-.team .member h4 {
-    font-weight: 700;
-    margin-bottom: 5px;
-    font-size: 20px;
-    color: tomato;
-}
 
-.team .member span {
-    display: block;
-    font-size: 15px;
-    padding-bottom: 10px;
-    position: relative;
+/* .team-area .team-container .cards:hover .contents .details h2 {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #45f3ff;
+    line-height: 1.2em;
+} */
+
+.team-area .team-container .cards .contents .details h2 {
+    font-size: 1.25em;
     font-weight: 500;
+    color: #fff;
 }
 
-.team .member span::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 2px;
-    background: black;
-    bottom: 0;
-    left: 0;
-}
-
-.team .member p {
-    margin: 10px 0 0 0;
-    font-size: 14px;
-}
-
-
-/* .team .member .social {
-    margin-top: 12px;
+.team-area .team-container .cards .contents .details .data {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-} */
-
-
-/* .team .member .social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: #eef2f8;
+    justify-content: space-around;
+    margin: 15px 0;
 }
 
-.team .member .social .a i {
-    color: tomato;
-    font-size: 16px;
-    margin: 0 2px;
-} */
-
-
-/* .team .member .social a:hover {
-    background: tomato;
+.team-area .team-container .cards .contents .details h3 {
+    font-size: 1em;
+    color: #45f3ff;
+    /* line-height: 1em; */
+    font-weight: 600;
 }
 
-.team .member .social a:hover i {
-    background: white;
+.team-area .team-container .cards .contents .details h3 span {
+    font-size: 0.85em;
+    font-weight: 400;
+    color: #fff;
 }
 
-.team .member .social a+a {
-    margin-left: 8px;
-} */
-
-section {
-    padding: 25px 0;
-    overflow: hidden;
+.team-area .team-container .cards .contents .details .actionBtn button {
+    padding: 5px 10px;
+    /* border: none; */
+    /* outline: none; */
+    border-radius: 5px;
+    background: #45f3ff;
+    /* color: #222; */
+    cursor: pointer;
 }
-
-.section-title {
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-.underline {
-    width: 150px;
-    height: 1px;
-    background-color: black;
-    margin: auto;
-    margin-top: -30px;
-}
-
-.section-title h4 {
-    /* font-size: 32px; */
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    color: tomato;
-}
-
-.section-title p {
-    margin-top: 20px;
-}
-
-
-/* Trial End  */

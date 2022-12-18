@@ -3,7 +3,7 @@ include '../assets/sidebar.php';
 ?>
 
 <link rel="stylesheet" href="../css//courses.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 <div class="course_div">
     <div class="courses_main_div">
         <a href="../Semester/Semesters.php?action=firstsemester"><svg>
@@ -25,12 +25,12 @@ include '../assets/sidebar.php';
         <a href="../Semester/Semesters.php?action=fifthsemester"><svg>
                 <rect></rect>
             </svg>5th Semester</a>
-        <a href="../Semester/sixthSemester.php"><svg>
+        <a href="../Semester/Semesters.php?action=sixthsemester"><svg>
                 <rect></rect>
             </svg>6th Semester</a>
     </div>
     <div class="courses_main_div">
-        <a href="../Semester/seventhSemester.php"><svg>
+        <a href="../Semester/Semesters.php?action=seventhsemester"><svg>
                 <rect></rect>
             </svg>7th Semester</a>
         <a href="../Semester/Semesters.php?action=eightsemester"><svg>

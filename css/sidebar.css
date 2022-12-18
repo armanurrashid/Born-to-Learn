@@ -137,11 +137,12 @@ label #sidebar_btn:hover {
 
 .content {
     margin-left: 230px;
-    background: url(back4.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
+    /* background: url(back4.jpg) no-repeat; */
+    /* background-position: center; */
+    /* background-size: cover; */
     height: 100vh;
     transition: 0.5s;
+    /* background: url("../images//back5.jpg") no-repeat center center fixed; */
 }
 
 #check:checked~.content {
@@ -150,4 +151,17 @@ label #sidebar_btn:hover {
 
 #check {
     display: none;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #00c6ff);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, #30ff00);
 }
