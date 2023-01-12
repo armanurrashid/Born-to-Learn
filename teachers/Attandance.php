@@ -20,7 +20,10 @@ include '../assets/sidebar.php';
                         <div class="card-body" style="text-align:center;">
                             <h5 class="card-title">CSE 3205</h5>
                             <h6 class="card-subtitle mb-2 text-muted ">Artifical Intelligence</h6>
-                            <a href="#" class="card-link btn btn-primary btn-sm text-white mt-2">See Contents</a>
+                            <div>
+                            <a href="courseAttandance.php?action=13" class="card-link btn btn-primary btn-sm text-white mt-2">Attendance</a>
+                            <a href="attendanceReport.php?action=13" class="card-link btn btn-primary btn-sm text-white mt-2">Report</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -29,7 +32,10 @@ include '../assets/sidebar.php';
                         <div class="card-body" style="text-align:center;">
                             <h5 class="card-title">CSE 3205</h5>
                             <h6 class="card-subtitle mb-2 text-muted ">Artifical Intelligence</h6>
-                            <a href="#" class="card-link btn btn-primary btn-sm text-white mt-2">See Contents</a>
+                            <div>
+                            <a href="courseAttandance.php?action=13" class="card-link btn btn-primary btn-sm text-white mt-2">Attendance</a>
+                            <a href="attendanceReport.php?action=13" class="card-link btn btn-primary btn-sm text-white mt-2">Report</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,7 +55,10 @@ include '../assets/sidebar.php';
                         <div class="card-body" style="text-align:center;">
                             <h5 class="card-title">CSE 3205</h5>
                             <h6 class="card-subtitle mb-2 text-muted ">Artifical Intelligence</h6>
-                            <a href="#" class="card-link btn btn-primary btn-sm text-white mt-2">See Contents</a>
+                            <div>
+                            <a href="courseAttandance.php?action=13" class="card-link btn btn-primary btn-sm text-white mt-2">Attendance</a>
+                            <a href="attendanceReport.php?action=13" class="card-link btn btn-primary btn-sm text-white mt-2">Report</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,7 +67,11 @@ include '../assets/sidebar.php';
                         <div class="card-body" style="text-align:center;">
                             <h5 class="card-title">CSE 3205</h5>
                             <h6 class="card-subtitle mb-2 text-muted ">Artifical Intelligence</h6>
-                            <a href="#" class="card-link btn btn-primary btn-sm text-white mt-2">See Contents</a>
+                            <div>
+                            <a href="courseAttandance.php?action=13" class="card-link btn btn-primary btn-sm text-white mt-2">Attendance</a>
+                            <a href="attendanceReport.php?action=13" class="card-link btn btn-primary btn-sm text-white mt-2">Report</a>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>

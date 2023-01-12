@@ -1,3 +1,7 @@
+<!-- <?php
+session_start();
+$name = $_SESSION['user_type'];
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +27,7 @@
         <div class="left_area">
             <h3>Born to <span>Learn</span></h3>
         </div>
-        <div class="right_area">
+        <div>
             <a href="#" class="logout_btn">Logout</a>
         </div>
 
@@ -31,28 +35,21 @@
     </header>
 
     <div class="sidebar">
-        <!-- <center>
-            <img src="back4.jpg" alt="" class="profile_image">
-            <h4>Jessica</h4>
-        </center> -->
-        <!--         
-        <label for="check">
-            
-        <i class="fas fa-bars" id="sidebar_btn"></i> -->
-
-
         <a href="../General/teachers.php" title="Teachers"> <i class="fa-solid fa-person-chalkboard"></i><span>Teachers</span></a>
         <a href="../General/students.php"> <i class="fa-solid fa-users"></i><span>Students</span></a>
         <a href="../General/staffs.php"> <i class="fa-solid fa-user-injured"></i><span>Office Staffs</span></a>
-        <a href="../General/courses.php"> <i class="fas fa-th"></i><span>Courses</span></a>
-        <a href="../teachers/assignedCourse.php"> <i class="fa-solid fa-book-open-reader"></i></i><span>Assigned Courses</span></a>
-        <a href="#"> <i class="fa-solid fa-hand"></i><span>Attendance</span></a>
-        <a href="#"> <i class="fa-solid fa-sheet-plastic"></i> <span>Mark Sheet</span></a>
-        <a href="#"> <i class="fa-solid fa-chart-column"></i><span>Performance</span></a>
+        
+        <?php if($name=='director'){
+            echo " <a href='../director/assignedTeacher.php'> <i class='fa-solid fa-book-open-reader'></i></i><span>Assigned Teachers</span></a>";
+        }
+        else if($name=='teacher'){
+            echo "<a href='../General/courses.php'> <i class='fas fa-th'></i><span>Courses</span></a>";
+            echo "<a href='../teachers/assignedCourse.php'> <i class='fa-solid fa-book-open-reader'></i></i><span>Assigned Courses</span></a>";
+            echo "<a href='../teachers/Attandance.php'> <i class='fa-solid fa-hand'></i><span>Attendance</span></a>";
+            echo "<a href='../teachers/marks.php'> <i class='fa-solid fa-sheet-plastic'></i> <span>Mark Sheet</span></a>";
+            echo "<a href='#'> <i class='fa-solid fa-chart-column'></i><span>Performance</span></a>";
+        }?>
+
+      
     </div>
     <div class="content">
-        <!--         
-    </div>
-</body>
-
-</html> -->

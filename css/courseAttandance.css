@@ -34,7 +34,7 @@ body {
 }
 
 table {
-    transform: translate(-50%, -55%);
+    transform: translate(-50%, 0%);
     border-collapse: collapse;
     width: 680px;
     border: 1px solid #0d9dbb;
@@ -67,7 +67,6 @@ td {
     background-color: #0d9dbb;
     color: #fff;
 }
-
 
 /* tr:hover {
     background-color: #b0e2ec;

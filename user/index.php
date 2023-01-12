@@ -42,7 +42,7 @@
                 </div>
                 <div class="d-flex justify-content-center">
                     <a href="login.php" style="--clr:#1e9bff" class="me-2"><span>Sign in</span><i></i></a>
-                    <a href="#" style="--clr:#6eff3e" class="ms-2"><span>Sign up</span><i></i></a>
+                    <!-- <a href="#" style="--clr:#6eff3e" class="ms-2"><span>Sign up</span><i></i></a> -->
                 </div>
             </div>
         </div>

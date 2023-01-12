@@ -1,4 +1,8 @@
 <?php
+session_start();
+$name = $_SESSION['user_type'];
+?>
+<?php
 include '../assets/sidebar.php';
 ?>
 
@@ -16,11 +20,11 @@ include '../assets/sidebar.php';
                     <div class="details">
                         <h2>1<sup>st</sup> Batch</h2>
                         <div class="data">
-                            <h3>31<br><span>Students</span></h3>
+                            <h3>27<br><span>Students</span></h3>
                             <h3>Session<br><span>2017-2018</span></h3>
                         </div>
                         <div class="actionBtn">
-                            <button class="btn btn-sm mb-2">View Students</button>
+                            <button class="btn btn-sm mb-2" onclick="window.location.href='secondBatchStudent.php'">View Students</button>
                         </div>
                     </div>
                 </div>
@@ -59,11 +63,11 @@ include '../assets/sidebar.php';
                     <div class="details">
                         <h2>3<sup>rd</sup> Batch</h2>
                         <div class="data">
-                            <h3>31<br><span>Students</span></h3>
-                            <h3>Session<br><span>2018-2019</span></h3>
+                            <h3>36<br><span>Students</span></h3>
+                            <h3>Session<br><span>2019-2020</span></h3>
                         </div>
                         <div class="actionBtn">
-                            <button class="btn btn-sm mb-2">View Students</button>
+                            <button class="btn btn-sm mb-2" onclick="window.location.href='secondBatchStudent.php'">View Students</button>
                             <!-- <button>Message</button> -->
                         </div>
                     </div>
@@ -79,11 +83,11 @@ include '../assets/sidebar.php';
                     <div class="details">
                         <h2>4<sup>th</sup> Batch</h2>
                         <div class="data">
-                            <h3>31<br><span>Students</span></h3>
-                            <h3>Session<br><span>2018-2019</span></h3>
+                            <h3>32<br><span>Students</span></h3>
+                            <h3>Session<br><span>2020-2021</span></h3>
                         </div>
                         <div class="actionBtn">
-                            <button class="btn btn-sm mb-2">View Students</button>
+                            <button class="btn btn-sm mb-2" onclick="window.location.href='secondBatchStudent.php'">View Students</button>
 
                         </div>
                     </div>
@@ -91,26 +95,6 @@ include '../assets/sidebar.php';
 
             </div>
 
-            <!-- <div class="cards">
-                <div class="lines"></div>
-                <div class="imgBX">
-                    <img src="../images/back4.jpg" alt="">
-                </div>
-                <div class="contents">
-                    <div class="details">
-                        <h2>2<sup>nd</sup> Batch</h2>
-                        <div class="data">
-                            <h3>31<br><span>Students</span></h3>
-                            <h3>Session<br><span>2018-2019</span></h3>
-                        </div>
-                        <div class="actionBtn">
-                            <button class="btn btn-sm mb-2">View Students</button>
-                           
-                        </div>
-                    </div>
-                </div>
-
-            </div> -->
         </div>
 
 
