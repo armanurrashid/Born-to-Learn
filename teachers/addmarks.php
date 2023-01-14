@@ -87,7 +87,8 @@ if(isset($_POST['submit'])){
                       <tr>
                       <td><?php echo $student_roll; ?></td>
                       <td><?php echo $student_name; ?></td>  
-                      <td ><div><input class="me-1" type="number" name='test[<?php echo $student_id; ?>]'></td>
+                      <td ><div>
+                      <input class="me-1" type="number" name='test[<?php echo $student_id; ?>]'></td>
                       <input name="semester"  value="<?php echo  $semester; ?>" style="display:none;">
                       <input name="assaigncourse_id"  value="<?php echo  $assaigncourse_id; ?>" style="display:none;"> 
                       <input name="test_name"  value="<?php echo  $test_type."_".$test_no; ?>" style="display:none;">

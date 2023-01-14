@@ -71,22 +71,17 @@ if(isset($_POST['submit'])){
  
         <div style="padding-bottom: 25px;padding-top:80px;">
             <div class="row"> 
-                <div class="col-3"></div>
-                <div class="col-6  d-flex">
+                <div class="col-2"></div>
+                <div class="col-10 d-flex">
                 <form action="../teachers/courseAttandance.php" method="post"> 
-                        <button class="btn btn-primary ms-5" name="show" type="submit">Show previous</button>    
+                        <button class="btn btn-sm me-5 button_color" name="show" type="submit">Show Previous</button>    
                         <input type="date" name="date" id="" required>
                         <input name="semester"  value="<?php echo  $semester; ?>" style="display:none;">
-                        <input name="assaigncourse_id"  value="<?php echo  $assaigncourse_id; ?>" style="display:none;"> 
-                     
-                    
+                        <input name="assaigncourse_id"  value="<?php echo  $assaigncourse_id; ?>" style="display:none;">
                     </form>
-
                 </div>
             </div>
         </div>
-
-
 
 <div style="padding-bottom: 45px;">
 
@@ -99,15 +94,15 @@ if(isset($_POST['submit'])){
                 $result = mysqli_query($conn, " SELECT * FROM `user` WHERE semester='$semester'") or die('query failed');
                 if ($result->num_rows > 0) { ?>
                 <tr>
-                <td colspan="1" style="text-align:right;"> 
-                    <label for="date" class="col-2 col-form-label">Date</label>
+                <td colspan="3"  class="text-end py-1"> 
+                    <label for="date" class="col-2 col-form-label me-1" style="font-size:15px;">Select Date </label>
                     <input type="date" name="date" id="" required> 
                  </td> 
                 </tr>
                      <tr id="header" style="text-align:center;">
-                     <th >ID</th>
+                     <th>ID</th>
                      <th>Name</th>
-                     <th>Attandance</th>
+                     <th>Attendance</th>
                      </tr>
                    <?php  while ($row = $result->fetch_assoc()) {
                             $student_id=$row['ID'];
@@ -121,8 +116,7 @@ if(isset($_POST['submit'])){
                          
                          <td><div>
                           
-                         <input class="me-1" type="radio" name='attend[<?php echo $student_id; ?>]' value="1"  >Present
-                        
+                         <input class="me-1" type="radio" name='attend[<?php echo $student_id; ?>]' value="1">Present
                          <input class="me-1" type="radio" name='attend[<?php echo $student_id; ?>]' value="0" > Absent </div>
                          <input name="semester"  value="<?php echo  $semester; ?>" style="display:none;">
                          <input name="assaigncourse_id"  value="<?php echo  $assaigncourse_id; ?>" style="display:none;">  
@@ -130,7 +124,7 @@ if(isset($_POST['submit'])){
                          </tr> 
                    <?php }  } ?>
                 <tr>   
-                <td   colspan="3" style="text-align:right;"><button class="btn btn-primary btn-sm" name="submit" type="submit">Submit</button>
+                <td   colspan="3" class="text-end px-5"><button class="btn btn-sm button_color" name="submit" type="submit">Submit</button>
                 </form> </td>       
                 </tr>
                  
@@ -152,7 +146,7 @@ if(isset($_POST['submit'])){
                      <tr id="header" style="text-align:center;">
                      <th >ID</th>
                      <th>Name</th> 
-                     <th>Attandance</th>
+                     <th>Attendance</th>
                      </tr>
                    <?php  while ($row = $result->fetch_assoc()) {
                             $student_id=$row['ID'];
@@ -176,7 +170,7 @@ if(isset($_POST['submit'])){
                    <?php }  } ?>
                 <tr>   
                 <td   colspan="3" style="text-align:right;">
-                 <a href="courseAttandance.php?semester=<?php echo $semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?> " class="card-link btn btn-primary btn-sm text-white mt-2">Take attendace</a>
+                 <a href="courseAttandance.php?semester=<?php echo $semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?> " class="card-link btn btn-sm text-white mt-2 button_color">Take Attendance</a>
                  </td>       
                 </tr>
                  

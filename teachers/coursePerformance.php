@@ -27,6 +27,10 @@ function attandance_performance($conn,$assaigncourse_id,$student_id){
      
     return $attandance;
 }
+
+function course_performance($mark,$attandance){
+    return ceil(((40*$attandance)/100) + (($mark*4*60)/100));
+}
 ?>
 
 <link rel="stylesheet" href="../css//courseAttandance.css">
@@ -60,6 +64,7 @@ table{
 
                     $mark=mark_performance($conn,$assaigncourse_id,$student_id);
                     $attandance=attandance_performance($conn,$assaigncourse_id,$student_id);
+                    $Performance=course_performance($mark,$attandance);
                 ?>
                     <tr>
                         <td><?php echo $student_roll; ?></td>
@@ -69,7 +74,7 @@ table{
                         <td><?php echo $mark; ?></td>
                         <td>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">85%</div>
+                                <div class="progress-bar" role="progressbar" style="width: <?php echo $Performance?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $Performance?>%</div>
                             </div>
                         </td>
                     </tr>

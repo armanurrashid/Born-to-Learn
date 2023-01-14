@@ -1,8 +1,6 @@
 <?php
 session_start();
 include "../assets/header.php";
-
-
 ?>
 <link rel="stylesheet" href="login.css">
 </head>
@@ -29,12 +27,7 @@ include "../assets/header.php";
                 <div class="d-flex justify-content-around">
                     <input type="submit" class="btn btn-sm" value="Login">
                 </div>
-
             </div>
         </div>
     </form>
-
 </body>
-<?php
-
-?>

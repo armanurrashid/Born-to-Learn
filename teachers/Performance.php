@@ -15,9 +15,9 @@ $user_type = $_SESSION['user_type'];
 </style>
 
 
-<div class="team-area">
+<div class="team-area ps-0">
     <div class="team-container">
-        <div class="row m-0 p-0 mt-5">
+        <div class="row mt-3 mx-5">
             <!-- <div class="d-flex"> -->
 
            
@@ -39,12 +39,12 @@ $user_type = $_SESSION['user_type'];
                     } ?>
                     <!-- <div class="col-1"></div> -->
                     <div class="col-6 d-flex justify-content-around">
-                        <div class="card bg-light mb-5" style="width: 18rem;">
+                        <div class="card mb-5" style="width: 18rem;background:#d5e5f6 ">
                             <div class="card-body" style="text-align:center;">
-                                <h6 class="card-title"><?php echo $course_title; ?></h6>
+                                <h6 class="card-title fw-bold"><?php echo $course_title; ?></h6>
                                 <h6 class="card-subtitle mb-2 text-muted "><?php echo $course_code; ?></h6>
                                 <div>
-                                    <a href="coursePerformance.php?semester=<?php echo $course_semester; ?> && assaigncourse_id=<?php echo $assaigncourse_id; ?> " class="card-link btn btn-primary btn-sm text-white mt-2">See Performance</a>
+                                    <a href="coursePerformance.php?semester=<?php echo $course_semester; ?> && assaigncourse_id=<?php echo $assaigncourse_id; ?> " class="card-link btn button_color btn-sm text-white mt-2">See Performance</a>
                                 </div>
                             </div>
                         </div>

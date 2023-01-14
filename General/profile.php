@@ -1,6 +1,9 @@
 <?php
 include '../assets/sidebar.php';
 include '../assets/database.php';
+$user_name = $_SESSION['user_name']; 
+$user_mobile = $_SESSION['user_mobile']; 
+$user_email = $_SESSION['user_email']; 
 ?>
 
 <link rel="stylesheet" href="../css//students.css">
@@ -51,26 +54,26 @@ include '../assets/database.php';
                         <div class="row">
                             <div class="d-flex flex-column align-items-center text-center mt-2 mb-2">
                                 <div class="mt-3">
-                                    <h4>Armanur Rashid</h4>
+                                    <h4>My Profile</h4>
                                 </div>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-4">
-                                <h6>First Name</h6>
+                                <h6>Name</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                            <h6>Armanur</h6>
+                            <h6><?php echo $user_name ?></h6>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-4">
-                                <h6>Last Name</h6>
+                                <h6>Mobile</h6>
                             </div>
                             <div class="col-sm-7 text-secondary">
-                                <h6>Rashid</h6>
+                                <h6><?php echo $user_mobile ?></h6>
                             </div>
                         </div>
                         <hr>
@@ -79,7 +82,7 @@ include '../assets/database.php';
                                 <h6>Email</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <h6>armanur2514@student.nstu.edu.bd</h6>
+                                <h6><?php echo $user_email ?></h6>
                             </div>
                         </div>
                         <hr>

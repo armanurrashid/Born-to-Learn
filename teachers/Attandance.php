@@ -15,9 +15,10 @@ $user_type = $_SESSION['user_type'];
 </style>
 
 
-    <div class="team-area">
+    <div class="team-area ps-0">
         <div class="team-container">
-            <div class="row mt-5"> 
+            <div class="row mt-3 mx-5 "> 
+               
                <?php 
                $assaignedCourse = mysqli_query($conn, " SELECT * FROM `assaigncourse` WHERE year='$year' AND teacher_id='$teacher_id'") or die('query failed'); 
                 
@@ -34,15 +35,15 @@ $user_type = $_SESSION['user_type'];
                                 $course_semester=$row['course_semester'];
                                 $credit= $row['credit'];
                             } ?>
-                            
-                     <div class="col-4 d-flex justify-content-around">
-                     <div class="card bg-light mb-5" style="width: 18rem;">
+                             <!-- <div class="col-md-1"></div> -->
+                     <div class="col-6 d-flex justify-content-around">
+                     <div class="card mb-5" style="width: 18rem;background:#d5e5f6;">
                         <div class="card-body" style="text-align:center;">
-                            <h5 class="card-title"><?php echo $course_title; ?></h5>
+                            <h6 class="card-title fw-bold"><?php echo $course_title; ?></h6>
                             <h6 class="card-subtitle mb-2 text-muted "><?php echo $course_code;?></h6>
                             <div>
-                            <a href="courseAttandance.php?semester=<?php echo $course_semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?> " class="card-link btn btn-primary btn-sm text-white mt-2">Attendance</a>
-                            <a href="attendanceReport.php?semester=<?php echo $course_semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?>" class="card-link btn btn-primary btn-sm text-white mt-2">Report</a>
+                            <a href="courseAttandance.php?semester=<?php echo $course_semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?> " class="card-link btn btn-sm text-white mt-2" style="background:#19b3d3">Attendance</a>
+                            <a href="attendanceReport.php?semester=<?php echo $course_semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?>" class="card-link btn btn-sm text-white mt-2" style="background:#19b3d3">Report</a>
                             </div>
                         </div>
                     </div>
@@ -51,7 +52,7 @@ $user_type = $_SESSION['user_type'];
                 <?php }  }  ?>
 
                  
-                <div class="col-1"></div>
+                <!-- <div class="col-1"></div> -->
               
                 
             </div> 

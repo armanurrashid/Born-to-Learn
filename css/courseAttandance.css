@@ -68,6 +68,18 @@ td {
     color: #fff;
 }
 
+.button_color {
+    background: #19b3d3;
+    color: white;
+    ;
+}
+
+.li_align {
+    text-decoration: none;
+    color: black;
+}
+
+
 /* tr:hover {
     background-color: #b0e2ec;
     transform: scale(1.02);

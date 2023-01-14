@@ -15,13 +15,13 @@ body {
 }
 
 #semester_id {
-    padding-top: 335px;
+    /* padding-top: 335px; */
     padding-left: 50%;
 }
 
 .semesters-container {
     /* width: 600px; */
-    height: auto;
+    /* height: auto; */
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
