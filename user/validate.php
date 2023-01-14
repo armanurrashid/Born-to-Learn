@@ -16,4 +16,9 @@ if (mysqli_num_rows($select_users) > 0) {
         header("Location:../General/students.php");
         // echo "window.location.href('../General/students.php')";
     }
+    else if($user_type == 'teacher') {
+        header("Location:../General/teachers.php");
+        // echo "window.location.href('../General/students.php')";
+    }
 }
+?>
