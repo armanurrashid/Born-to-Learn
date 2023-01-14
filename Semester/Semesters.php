@@ -1,6 +1,12 @@
 <?php
 include '../assets/database.php';
 include '../assets/sidebar.php';
+if(isset(($_GET['action']))){ 
+    // $date=date("Y/m/d");  
+     $semester=$_GET['action']; 
+    }
+     
+     
 ?>
 
 <link rel="stylesheet" href="../css//Semesters.css">
@@ -9,43 +15,25 @@ include '../assets/sidebar.php';
     <div class="semesters-container">
         <table>
             <tbody>
-                <?php
-                $x = $_GET['action'];
-                $sql = "select * FROM $x";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    if ($x == 'firstsemester') {
-                        $sem = '1st Semester';
-                    } else if ($x == 'secondsemester') {
-                        $sem = '2nd Semester';
-                    } else if ($x == 'thirdsemester') {
-                        $sem = '3rd Semester';
-                    } else if ($x == 'forthsemester') {
-                        $sem = '4th Semester';
-                    } else if ($x == 'fifthsemester') {
-                        $sem = '5th Semester';
-                    } else if ($x == 'sixthsemester') {
-                        $sem = '6th Semester';
-                    } else if ($x == 'seventhsemester') {
-                        $sem = '7th Semester';
-                    } else if ($x == 'eightsemester') {
-                        $sem = '8th Semester';
-                    }
+                <?php 
+               $result= mysqli_query($conn, " SELECT * FROM `courses` WHERE course_semester='$semester'  ") or die('query failed');
+                if ($result->num_rows > 0) {?>
+                   
 
-                    echo ' <tr id="semester">';
-                    echo '<th colspan="3" style="text-align:center;">' . $sem . '</th>';
-                    echo '</tr>';
+                     <tr id="semester">
+                     <th colspan="3" style="text-align:center;"> Semester <?php echo $semester;?> </th>
+                     </tr> 
 
-                    echo ' <tr id="header" style="text-align:center;">';
-                    echo ' <th >Course Code</th>';
-                    echo '<th>Course Title</th>';
-                    echo '<th>Course Credit</th>';
-                    echo ' </tr>';
-                    while ($row = $result->fetch_assoc()) {
+                    <tr id="header" style="text-align:center;">
+                    <th >Course Code</th>
+                    <th>Course Title</th>
+                    <th>Course Credit</th>
+                    </tr>
+                   <?php while ($row = $result->fetch_assoc()) {
                         echo '<tr>';
-                        echo '<td>' . $row['Course Code'] . '</td>';
-                        echo '<td>' . $row['Course Title'] . '</td>';
-                        echo '<td>' . $row['Course Credit'] . '</td>';
+                        echo '<td>' . $row['course_code'] . '</td>';
+                        echo '<td>' . $row['course_title'] . '</td>';
+                        echo '<td>' . $row['credit'] . '</td>';
                         echo '</tr> ';
                     }
                 } else {

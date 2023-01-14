@@ -20,7 +20,7 @@ if (mysqli_num_rows($select_users) > 0) {
     $_SESSION['user_type'] = $row['user_type'];
     $_SESSION['is_login']=1;
          
-    header("Location:../General/teachers.php");
+    header("Location:../General/students.php");
         // echo "window.location.href('../General/students.php')";
     
 }

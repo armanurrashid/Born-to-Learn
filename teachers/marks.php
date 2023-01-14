@@ -1,3 +1,4 @@
+
 <?php
 include '../assets/sidebar.php';
 include '../assets/database.php';
@@ -41,7 +42,8 @@ $user_type = $_SESSION['user_type'];
                             <h5 class="card-title"><?php echo $course_title; ?></h5>
                             <h6 class="card-subtitle mb-2 text-muted "><?php echo $course_code;?></h6>
                             <div> 
-                            <a href="showMarks.php?semester=<?php echo $course_semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?>" class="card-link btn btn-primary btn-sm text-white mt-2">Mark</a>
+                            <a href="showMarks.php?semester=<?php echo $course_semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?>" class="card-link btn btn-primary btn-sm text-white mt-2">All Tests</a>
+                            <a href="calculateMarks.php?semester=<?php echo $course_semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?>" class="card-link btn btn-primary btn-sm text-white mt-2">Final Evalution</a>
                             </div>
                         </div>
                     </div>

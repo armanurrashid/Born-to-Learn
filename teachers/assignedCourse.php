@@ -2,7 +2,7 @@
 include '../assets/sidebar.php';
 include '../assets/database.php';
 $year = date('Y');
-// session_start();
+session_start();
 $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name']; 
 $user_type = $_SESSION['user_type'];

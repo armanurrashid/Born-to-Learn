@@ -1,6 +1,49 @@
 <?php
 include '../assets/sidebar.php';
 include '../assets/database.php';
+if(isset(($_GET['semester']))){ 
+  // $date=date("Y/m/d"); 
+ 
+   $semester=$_GET['semester'];
+   $assaigncourse_id=$_GET['assaigncourse_id'];
+   $test_type=$_GET['test_type']; 
+   $tests =  mysqli_query($conn, " SELECT DISTINCT  taste_name FROM `course_tests` WHERE assaigncourse_id='$assaigncourse_id' AND taste_name  LIKE '%$test_type%'") or die('query failed');
+   if($tests->num_rows > 0){
+    $test_no=$tests->num_rows+1; 
+    
+   }else{
+    $test_no=1;
+   }
+
+}
+
+if(isset($_POST['submit'])){ 
+  $test = $_POST['test'];
+  $semester=$_POST['semester']; 
+  $assaigncourse_id=$_POST['assaigncourse_id'];
+  $test_name=$_POST['test_name']; 
+
+  $tests =  mysqli_query($conn, " SELECT * FROM `course_tests` WHERE assaigncourse_id='$assaigncourse_id' AND taste_name='$test_name'") or die('query failed');
+
+   foreach($test as $atn_key => $atn_value){
+     
+      if ($tests->num_rows > 0) {   
+          mysqli_query($conn, "UPDATE `course_tests`  SET marks='$atn_value'  WHERE assaigncourse_id = '$assaigncourse_id' AND taste_name='$test_name' AND student_id = '$atn_key'") or die('query failed');
+          echo "<script>
+          alert('Mark Updated!'); 
+          window.location.href='showMarks.php?semester=$semester && assaigncourse_id=$assaigncourse_id';
+          </script>";
+
+      } else{
+          mysqli_query($conn, "INSERT INTO `course_tests`(assaigncourse_id,taste_name,student_id,marks) VALUES('$assaigncourse_id', '$test_name','$atn_key','$atn_value')") or die('query failed'); 
+          echo "<script>
+          alert('Successfully Creted .$test_name.');
+          window.location.href='showMarks.php?semester=$semester && assaigncourse_id=$assaigncourse_id'; 
+          </script>"; 
+      }  
+
+   }
+  }
 ?>
 
 <link rel="stylesheet" href="../css//courseAttandance.css">
@@ -8,9 +51,10 @@ include '../assets/database.php';
     <div class="team-container">
     <div style="padding-bottom: 25px;padding-top:80px;">
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-3">
-                    <a class="btn btn-primary ms-5" href="showMarks.php?action=13">Back</a>
+                <div class="col-4"></div>
+                <div class="col-6">
+                    <!-- <a class="btn btn-primary ms-5" href="showMarks.php?action=13">Back</a> -->
+                    <h3>Mark Sheet For:<?php echo  $test_type."_".$test_no; ?></h3>
                 </div>
             </div>
         </div>
@@ -22,32 +66,41 @@ include '../assets/database.php';
 
       <!-- </div> -->
       <table style="margin-left: 50%;">
-            <tbody>
-                <?php
-                $x = $_GET['action'];
-                $sql = "select * FROM user WHERE Batch='$x'";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
+      <tbody>
+      <form action="../teachers/addmarks.php" method="post">
+             <?php 
+             $result = mysqli_query($conn, " SELECT * FROM `user` WHERE semester='$semester'") or die('query failed');
+             if ($result->num_rows > 0) { ?>
+              
+                  <tr id="header" style="text-align:center;">
+                  
+                  <th >ID</th>
+                  <th>Name</th>  
+                  <th>Mark</th> 
+                  </tr>
+                <?php  while ($row = $result->fetch_assoc()) {
+                         $student_id=$row['ID'];
+                         $student_name=$row['Name']; 
+                         $student_roll=$row['Roll'];  
+                 
+                 ?>
+                      <tr>
+                      <td><?php echo $student_roll; ?></td>
+                      <td><?php echo $student_name; ?></td>  
+                      <td ><div><input class="me-1" type="number" name='test[<?php echo $student_id; ?>]'></td>
+                      <input name="semester"  value="<?php echo  $semester; ?>" style="display:none;">
+                      <input name="assaigncourse_id"  value="<?php echo  $assaigncourse_id; ?>" style="display:none;"> 
+                      <input name="test_name"  value="<?php echo  $test_type."_".$test_no; ?>" style="display:none;">
 
-                    echo ' <tr id="header" style="text-align:center;">';
-                    echo ' <th >ID</th>';
-                    echo '<th>Name</th>';
-                    echo '<th>Marks</th>';
-                    echo ' </tr>';
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<tr>';
-                        echo '<td>' . $row['Roll'] . '</td>';
-                        echo '<td>' . $row['Name'] . '</td>';
-                        echo '<td><div><input class="me-1" type="number" name='.$row['Roll'].'> </div>';
-                        echo '</td>';
-                        echo '</tr> ';
-                    }
-                }
-                echo  '<tr><td   colspan="3" style="text-align:right;"><button class="btn btn-primary btn-sm" >Submit</button></td></tr>';
-                ?>
-            </tbody>
-        </table>
-        <!-- </div> -->
+                      </tr> 
+                <?php }  } ?> 
+                <tr>   
+                <td   colspan="4" style="text-align:center;"><button class="btn btn-primary btn-sm" name="submit" type="submit">Submit</button> 
+               </td>       
+                </tr>
+          </form>   
+         </tbody>
+            
     </div>
   </div>
 </div>

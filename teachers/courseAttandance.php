@@ -78,12 +78,18 @@ if(isset($_POST['submit'])){
                         <input type="date" name="date" id="" required>
                         <input name="semester"  value="<?php echo  $semester; ?>" style="display:none;">
                         <input name="assaigncourse_id"  value="<?php echo  $assaigncourse_id; ?>" style="display:none;"> 
-                </form>
+                     
+                    
+                    </form>
+
                 </div>
             </div>
         </div>
 
+
+
 <div style="padding-bottom: 45px;">
+
 <?php if($table_type=="create"){?>
     <form action="../teachers/courseAttandance.php" method="post">
         <table style="margin-left: 50%;">
@@ -93,7 +99,7 @@ if(isset($_POST['submit'])){
                 $result = mysqli_query($conn, " SELECT * FROM `user` WHERE semester='$semester'") or die('query failed');
                 if ($result->num_rows > 0) { ?>
                 <tr>
-                <td colspan="3" style="text-align:right;"> 
+                <td colspan="1" style="text-align:right;"> 
                     <label for="date" class="col-2 col-form-label">Date</label>
                     <input type="date" name="date" id="" required> 
                  </td> 

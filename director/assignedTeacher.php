@@ -82,11 +82,10 @@ if(isset(($_GET['teacher_id']))){
                                 <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" name="addMarks">Teacher</button>
                                 <ul class="dropdown-menu" id="thenumbers" name="thenumbers" aria-labelledby="dropdownMenuButton1">
                                 
-                                    <?php     
-                                        while ($row = $teacher->fetch_assoc()) {
-                                            $teacher_id=$row['ID'];
-                                            $teacher_name=$row['Name']; 
-                                    ?>
+                                     <?php     while ($row = $teacher->fetch_assoc()) {
+                                        $teacher_id=$row['ID'];
+                                        $teacher_name=$row['Name']; 
+                                      ?>
 
                             <li class="dropdown-item" style="cursor:pointer" ><a  href="assignedTeacher.php?  teacher_id=<?php echo $teacher_id; ?> && course_id=<?php echo $course_id; ?> && semester= <?php echo $semester; ?> "><?php echo $teacher_name; ?><a></li> 
 
