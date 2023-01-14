@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2023 at 06:07 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jan 14, 2023 at 04:16 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `architecture` (
   `ID` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `architecture`
@@ -67,6 +67,158 @@ INSERT INTO `architecture` (`ID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `assaigncourse`
+--
+
+CREATE TABLE `assaigncourse` (
+  `assaigncourse_id` int(100) NOT NULL,
+  `course_id` int(100) NOT NULL,
+  `teacher_id` int(100) NOT NULL,
+  `year` varchar(100) NOT NULL,
+  `semester` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `assaigncourse`
+--
+
+INSERT INTO `assaigncourse` (`assaigncourse_id`, `course_id`, `teacher_id`, `year`, `semester`) VALUES
+(49, 1, 1, '2023', 1),
+(50, 10, 1, '2023', 2),
+(51, 21, 1, '2023', 3),
+(52, 31, 1, '2023', 4),
+(53, 41, 1, '2023', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance_sheet`
+--
+
+CREATE TABLE `attendance_sheet` (
+  `assaigncourse_id` int(100) NOT NULL,
+  `date` date NOT NULL,
+  `student_id` int(100) NOT NULL,
+  `present` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `attendance_sheet`
+--
+
+INSERT INTO `attendance_sheet` (`assaigncourse_id`, `date`, `student_id`, `present`) VALUES
+(49, '2023-01-01', 13, 1),
+(49, '2023-01-01', 14, 1),
+(49, '2023-01-01', 15, 1),
+(49, '2023-01-01', 16, 1),
+(49, '2023-01-01', 17, 1),
+(49, '2023-01-01', 18, 1),
+(49, '2023-01-01', 19, 1),
+(49, '2023-01-01', 20, 1),
+(49, '2023-01-01', 21, 1),
+(49, '2023-01-01', 22, 1),
+(49, '2023-01-01', 23, 1),
+(49, '2023-01-01', 24, 1),
+(49, '2023-01-01', 25, 1),
+(49, '2023-01-01', 26, 1),
+(49, '2023-01-01', 27, 1),
+(49, '2023-01-01', 28, 1),
+(49, '2023-01-01', 29, 1),
+(49, '2023-01-01', 30, 1),
+(49, '2023-01-01', 31, 1),
+(49, '2023-01-01', 32, 1),
+(49, '2023-01-01', 33, 1),
+(49, '2023-01-01', 34, 1),
+(49, '2023-01-01', 35, 1),
+(49, '2023-01-01', 36, 1),
+(49, '2023-01-01', 37, 1),
+(49, '2023-01-01', 38, 1),
+(49, '2023-01-01', 39, 1),
+(49, '2023-01-02', 13, 0),
+(49, '2023-01-02', 14, 0),
+(49, '2023-01-02', 15, 0),
+(49, '2023-01-02', 16, 0),
+(49, '2023-01-02', 17, 0),
+(49, '2023-01-02', 18, 0),
+(49, '2023-01-02', 19, 0),
+(49, '2023-01-02', 20, 0),
+(49, '2023-01-02', 21, 0),
+(49, '2023-01-02', 22, 0),
+(49, '2023-01-02', 23, 0),
+(49, '2023-01-02', 24, 0),
+(49, '2023-01-02', 25, 0),
+(49, '2023-01-02', 26, 0),
+(49, '2023-01-02', 27, 0),
+(49, '2023-01-02', 28, 0),
+(49, '2023-01-02', 29, 0),
+(49, '2023-01-02', 30, 0),
+(49, '2023-01-02', 31, 0),
+(49, '2023-01-02', 32, 0),
+(49, '2023-01-02', 33, 0),
+(49, '2023-01-02', 34, 0),
+(49, '2023-01-02', 35, 0),
+(49, '2023-01-02', 36, 0),
+(49, '2023-01-02', 37, 0),
+(49, '2023-01-02', 38, 0),
+(49, '2023-01-02', 39, 0),
+(49, '2023-01-03', 13, 1),
+(49, '2023-01-03', 14, 0),
+(49, '2023-01-03', 15, 1),
+(49, '2023-01-03', 16, 0),
+(49, '2023-01-03', 17, 1),
+(49, '2023-01-03', 18, 0),
+(49, '2023-01-03', 19, 1),
+(49, '2023-01-03', 20, 0),
+(49, '2023-01-03', 21, 1),
+(49, '2023-01-03', 22, 0),
+(49, '2023-01-03', 23, 1),
+(49, '2023-01-03', 24, 0),
+(49, '2023-01-03', 25, 1),
+(49, '2023-01-03', 26, 0),
+(49, '2023-01-03', 27, 1),
+(49, '2023-01-03', 28, 0),
+(49, '2023-01-03', 29, 1),
+(49, '2023-01-03', 30, 0),
+(49, '2023-01-03', 31, 1),
+(49, '2023-01-03', 32, 0),
+(49, '2023-01-03', 33, 1),
+(49, '2023-01-03', 34, 0),
+(49, '2023-01-03', 35, 1),
+(49, '2023-01-03', 36, 0),
+(49, '2023-01-03', 37, 1),
+(49, '2023-01-03', 38, 0),
+(49, '2023-01-03', 39, 1),
+(49, '2023-01-04', 13, 1),
+(49, '2023-01-04', 14, 1),
+(49, '2023-01-04', 15, 1),
+(49, '2023-01-04', 16, 1),
+(49, '2023-01-04', 17, 1),
+(49, '2023-01-04', 18, 1),
+(49, '2023-01-04', 19, 1),
+(49, '2023-01-04', 20, 1),
+(49, '2023-01-04', 21, 1),
+(49, '2023-01-04', 22, 1),
+(49, '2023-01-04', 23, 0),
+(49, '2023-01-04', 24, 0),
+(49, '2023-01-04', 25, 0),
+(49, '2023-01-04', 26, 0),
+(49, '2023-01-04', 27, 0),
+(49, '2023-01-04', 28, 0),
+(49, '2023-01-04', 29, 0),
+(49, '2023-01-04', 30, 0),
+(49, '2023-01-04', 31, 0),
+(49, '2023-01-04', 32, 0),
+(49, '2023-01-04', 33, 0),
+(49, '2023-01-04', 34, 0),
+(49, '2023-01-04', 35, 0),
+(49, '2023-01-04', 36, 0),
+(49, '2023-01-04', 37, 0),
+(49, '2023-01-04', 38, 0),
+(49, '2023-01-04', 39, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `courses`
 --
 
@@ -76,7 +228,7 @@ CREATE TABLE `courses` (
   `course_title` varchar(50) NOT NULL,
   `course_semester` int(20) NOT NULL,
   `credit` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `courses`
@@ -163,7 +315,7 @@ CREATE TABLE `eightsemester` (
   `Course Code` varchar(20) NOT NULL,
   `Course Title` varchar(50) NOT NULL,
   `Course Credit` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `eightsemester`
@@ -188,7 +340,7 @@ CREATE TABLE `fifthsemester` (
   `Course Code` varchar(20) NOT NULL,
   `Course Title` varchar(50) NOT NULL,
   `Course Credit` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `fifthsemester`
@@ -219,7 +371,7 @@ CREATE TABLE `firstbatch` (
   `email` varchar(50) NOT NULL,
   `mobile` varchar(50) NOT NULL,
   `image` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `firstbatch`
@@ -268,7 +420,7 @@ CREATE TABLE `firstsemester` (
   `Course Code` varchar(20) NOT NULL,
   `Course Title` varchar(50) NOT NULL,
   `Course Credit` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `firstsemester`
@@ -295,7 +447,7 @@ CREATE TABLE `forthsemester` (
   `Course Code` varchar(20) NOT NULL,
   `Course Title` varchar(50) NOT NULL,
   `Course Credit` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `forthsemester`
@@ -323,7 +475,7 @@ CREATE TABLE `secondsemester` (
   `Course Code` varchar(20) NOT NULL,
   `Course Title` varchar(50) NOT NULL,
   `Course Credit` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `secondsemester`
@@ -351,7 +503,7 @@ CREATE TABLE `sixthsemester` (
   `Course Code` varchar(50) NOT NULL,
   `Course Title` varchar(50) NOT NULL,
   `Course Credit` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sixthsemester`
@@ -382,7 +534,7 @@ CREATE TABLE `teacher` (
   `Name` varchar(50) NOT NULL,
   `Mobile` varchar(50) NOT NULL,
   `Designation` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `teacher`
@@ -413,7 +565,7 @@ CREATE TABLE `thirdsemester` (
   `Course Code` varchar(20) NOT NULL,
   `Course Title` varchar(50) NOT NULL,
   `Course Credit` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `thirdsemester`
@@ -446,58 +598,65 @@ CREATE TABLE `user` (
   `Roll` varchar(50) NOT NULL,
   `Mobile` varchar(50) NOT NULL,
   `Batch` int(11) NOT NULL,
+  `semester` int(100) NOT NULL,
   `Name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ID`, `email`, `password`, `user_type`, `Roll`, `Mobile`, `Batch`, `Name`) VALUES
-(0, 'director@nstu.edu.bd', '123456', 'director', '0', '01711200410', 0, 'Dr. Mohammad Salim Hossain'),
-(1, 'auhidsumon@nstu.edu.bd', '123456', 'teacher', '0', '01815662160', 0, 'Md. Auhidur Rahman'),
-(2, 'iftekhar.iit@nstu.edu.bd', '123456', 'teacher', '0', '01727208714', 0, 'Md. Iftekharul Alam'),
-(3, 'falguniroy.iit@nstu.edu.bd', '123456', 'teacher', '0', '01680446978', 0, 'Falguni Roy'),
-(4, 'tasniya.iit@nstu.edu.bd', '123456', 'teacher', '0', '01936543596', 0, 'Tasniya Ahmed'),
-(5, 'dipok.iit@nstu.edu.bd', '123456', 'teacher', '0', '01743972128', 0, 'Dipok Chandra Das'),
-(6, 'dipanita.iit@nstu.edu.bd', '123456', 'teacher', '0', '01534373338', 0, 'Dipanita Saha'),
-(7, 'nuruzzaman@nstu.edu.bd', '123456', 'teacher', '0', '01815662160', 0, 'Md. Niruzzaman Bhuiyan'),
-(8, 'hasan.imam@nstu.edu.bd', '123456', 'teacher', '0', '01812357619', 0, 'Md Hasan Imam'),
-(9, 'eusha@nstu.edu.bd', '123456', 'teacher', '0', '01521407156', 0, 'Md. Eusha Kadir'),
-(10, 'nazmun@nstu.edu.bd', '123456', 'teacher', '0', '01407609939', 0, 'Nazmun Nahar'),
-(11, 'rafid.iit@nstu.edu.bd', '123456', 'teacher', '0', '01684796722', 0, 'Rafid Mostafiz'),
-(12, 'tasnim@nstu.edu.bd', '123456', 'teacher', '0', '01676098920', 0, 'Tasnim Rahman'),
-(13, 'noor2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825001M', '01700112233', 13, 'Abdullah An Noor'),
-(14, 'emran2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825002M', '01700112233', 13, 'Emran Hossain'),
-(15, 'mahbub2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825003M', '01700112233', 13, 'Md Mahbub Alam'),
-(16, 'fazle2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825004M', '01700112233', 13, 'Fazle Rabbi'),
-(17, 'asif2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825005M', '01700112233', 13, 'Md Abrar Hossain Asif'),
-(18, 'tamanna2513@student.nstu.edu.bd', '123456', 'students', 'BKH1825006F', '01700112233', 13, 'Nishat Tasnim Tamanna'),
-(19, 'mynuddin2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825007M', '01700112233', 13, 'Md Mynuddin'),
-(20, 'adnan2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825008M', '01700112233', 13, 'Al Adnan Sami'),
-(21, 'shuvra2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825009M', '01700112233', 13, 'Shuvra Aditya'),
-(22, 'muinuddin2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825012M', '01700112233', 13, 'Muin Uddin'),
-(23, 'tahrim2513@student.nstu.edu.bd', '123456', 'students', 'MUH1825013F', '01700112233', 13, 'Tahrim Kabir'),
-(24, 'azad2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825014M', '01700112233', 13, 'Md. Azad Hossain'),
-(25, 'faisal2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825015M', '01700112233', 13, 'Md. Faisal Ahmed'),
-(26, 'priyo2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825020M', '01700112233', 13, 'Al-Shahriar Priyo'),
-(27, 'rahat2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825022M', '01700112233', 13, 'Rahat Uddin Azad'),
-(28, 'mahfuz2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825022M', '01700112233', 13, 'Mahfuzur Rahman'),
-(29, 'moonmoon2513@student.nstu.edu.bd', '123456', 'students', 'BKH1825027F', '01700112233', 13, 'Moonmoon Das'),
-(30, 'jaber2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825029M', '01700112233', 13, 'Md. Al Jaber'),
-(31, 'saifur2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825031M', '01700112233', 13, 'Md. Saifur Rahman'),
-(32, 'shuvo2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825032M', '01700112233', 13, 'Shuvo Islam'),
-(33, 'patan2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825033M', '01700112233', 13, 'Foyzol karim Patan'),
-(34, 'nadim2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825034M', '01700112233', 13, 'Nadim Bhuiyan'),
-(35, 'kamruzzaman2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825035M', '01700112233', 13, 'Md. Kamruzzaman'),
-(36, 'khair2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825036M', '01700112233', 13, 'Khair Ahmed'),
-(37, 'akash2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825037M', '01700112233', 13, 'Akash Chandra Debnath'),
-(38, 'anwar2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825038M', '01700112233', 13, 'Anwar kabir Sajib'),
-(39, 'nowal2513@student.nstu.edu.bd', '123456', 'students', 'MUH1825041F', '01700112233', 13, 'Nowal Benta Bashar');
+INSERT INTO `user` (`ID`, `email`, `password`, `user_type`, `Roll`, `Mobile`, `Batch`, `semester`, `Name`) VALUES
+(0, 'director@nstu.edu.bd', '123456', 'director', '0', '01711200410', 0, 0, 'Dr. Mohammad Salim Hossain'),
+(1, 'auhidsumon@nstu.edu.bd', '123456', 'teacher', '0', '01815662160', 0, 0, 'Md. Auhidur Rahman'),
+(2, 'iftekhar.iit@nstu.edu.bd', '123456', 'teacher', '0', '01727208714', 0, 0, 'Md. Iftekharul Alam'),
+(3, 'falguniroy.iit@nstu.edu.bd', '123456', 'teacher', '0', '01680446978', 0, 0, 'Falguni Roy'),
+(4, 'tasniya.iit@nstu.edu.bd', '123456', 'teacher', '0', '01936543596', 0, 0, 'Tasniya Ahmed'),
+(5, 'dipok.iit@nstu.edu.bd', '123456', 'teacher', '0', '01743972128', 0, 0, 'Dipok Chandra Das'),
+(6, 'dipanita.iit@nstu.edu.bd', '123456', 'teacher', '0', '01534373338', 0, 0, 'Dipanita Saha'),
+(7, 'nuruzzaman@nstu.edu.bd', '123456', 'teacher', '0', '01815662160', 0, 0, 'Md. Niruzzaman Bhuiyan'),
+(8, 'hasan.imam@nstu.edu.bd', '123456', 'teacher', '0', '01812357619', 0, 0, 'Md Hasan Imam'),
+(9, 'eusha@nstu.edu.bd', '123456', 'teacher', '0', '01521407156', 0, 0, 'Md. Eusha Kadir'),
+(10, 'nazmun@nstu.edu.bd', '123456', 'teacher', '0', '01407609939', 0, 0, 'Nazmun Nahar'),
+(11, 'rafid.iit@nstu.edu.bd', '123456', 'teacher', '0', '01684796722', 0, 0, 'Rafid Mostafiz'),
+(12, 'tasnim@nstu.edu.bd', '123456', 'teacher', '0', '01676098920', 0, 0, 'Tasnim Rahman'),
+(13, 'noor2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825001M', '01700112233', 13, 1, 'Abdullah An Noor'),
+(14, 'emran2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825002M', '01700112233', 13, 1, 'Emran Hossain'),
+(15, 'mahbub2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825003M', '01700112233', 13, 1, 'Md Mahbub Alam'),
+(16, 'fazle2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825004M', '01700112233', 13, 1, 'Fazle Rabbi'),
+(17, 'asif2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825005M', '01700112233', 13, 1, 'Md Abrar Hossain Asif'),
+(18, 'tamanna2513@student.nstu.edu.bd', '123456', 'students', 'BKH1825006F', '01700112233', 13, 1, 'Nishat Tasnim Tamanna'),
+(19, 'mynuddin2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825007M', '01700112233', 13, 1, 'Md Mynuddin'),
+(20, 'adnan2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825008M', '01700112233', 13, 1, 'Al Adnan Sami'),
+(21, 'shuvra2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825009M', '01700112233', 13, 1, 'Shuvra Aditya'),
+(22, 'muinuddin2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825012M', '01700112233', 13, 1, 'Muin Uddin'),
+(23, 'tahrim2513@student.nstu.edu.bd', '123456', 'students', 'MUH1825013F', '01700112233', 13, 1, 'Tahrim Kabir'),
+(24, 'azad2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825014M', '01700112233', 13, 1, 'Md. Azad Hossain'),
+(25, 'faisal2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825015M', '01700112233', 13, 1, 'Md. Faisal Ahmed'),
+(26, 'priyo2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825020M', '01700112233', 13, 1, 'Al-Shahriar Priyo'),
+(27, 'rahat2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825022M', '01700112233', 13, 1, 'Rahat Uddin Azad'),
+(28, 'mahfuz2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825022M', '01700112233', 13, 1, 'Mahfuzur Rahman'),
+(29, 'moonmoon2513@student.nstu.edu.bd', '123456', 'students', 'BKH1825027F', '01700112233', 13, 1, 'Moonmoon Das'),
+(30, 'jaber2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825029M', '01700112233', 13, 1, 'Md. Al Jaber'),
+(31, 'saifur2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825031M', '01700112233', 13, 1, 'Md. Saifur Rahman'),
+(32, 'shuvo2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825032M', '01700112233', 13, 1, 'Shuvo Islam'),
+(33, 'patan2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825033M', '01700112233', 13, 1, 'Foyzol karim Patan'),
+(34, 'nadim2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825034M', '01700112233', 13, 1, 'Nadim Bhuiyan'),
+(35, 'kamruzzaman2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825035M', '01700112233', 13, 1, 'Md. Kamruzzaman'),
+(36, 'khair2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825036M', '01700112233', 13, 1, 'Khair Ahmed'),
+(37, 'akash2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825037M', '01700112233', 13, 1, 'Akash Chandra Debnath'),
+(38, 'anwar2513@student.nstu.edu.bd', '123456', 'students', 'ASH1825038M', '01700112233', 13, 1, 'Anwar kabir Sajib'),
+(39, 'nowal2513@student.nstu.edu.bd', '123456', 'students', 'MUH1825041F', '01700112233', 13, 1, 'Nowal Benta Bashar');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `assaigncourse`
+--
+ALTER TABLE `assaigncourse`
+  ADD PRIMARY KEY (`assaigncourse_id`);
 
 --
 -- Indexes for table `courses`
@@ -568,6 +727,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `assaigncourse`
+--
+ALTER TABLE `assaigncourse`
+  MODIFY `assaigncourse_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `firstbatch`

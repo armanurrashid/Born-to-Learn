@@ -1,9 +1,7 @@
-<?php
-session_start();
-$name = $_SESSION['user_type'];
-?>
+ 
 <?php
 include '../assets/sidebar.php';
+$name = $_SESSION['user_type'];
 ?>
 
 <link rel="stylesheet" href="../css//students.css">

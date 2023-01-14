@@ -1,6 +1,13 @@
 <?php
 include '../assets/sidebar.php';
 include '../assets/database.php';
+if(isset(($_GET['semester']))){ 
+    // $date=date("Y/m/d"); 
+   
+     $semester=$_GET['semester'];
+     $assaigncourse_id=$_GET['assaigncourse_id'];  
+ 
+ }
 ?>
 
 <link rel="stylesheet" href="../css//Attendance.css">
@@ -18,42 +25,53 @@ include '../assets/database.php';
         </div>
       <table style="margin-left: 50%; margin-bottom:50px;">
             <tbody>
+                    <tr id="header" style="text-align:center;">
+                    <th >ID</th>
+                    <th>Name</th>
+            
+            
+            
+                <?php  
+                $dates =  mysqli_query($conn, " SELECT DISTINCT date FROM `attendance_sheet` WHERE assaigncourse_id='$assaigncourse_id'") or die('query failed'); 
 
-                <?php
-                
-                $x = $_GET['action'];
-       
-                $sql = "select * FROM user WHERE Batch='$x'";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
+                if ($dates->num_rows > 0) { 
+                    $dates_array = array();
+                     while ($row = $dates->fetch_assoc()) {
+                        $date=$row['date'] ;
+                        $dates_array[] =$date;
+                        ?>
+                        <th><?php echo  $date; ?></th> 
+                   <?php }}?>  
+                    </tr>
 
-                    echo ' <tr id="header" style="text-align:center;">';
-                    echo ' <th >ID</th>';
-                    echo '<th>Name</th>';
-                    echo '<th>10/01/2023</th>';
-                    echo '<th>12/01/2023</th>';
-                    echo '<th>14/01/2023</th>';
-                    echo '<th>16/01/2023</th>';
-                    echo '<th>18/01/2023</th>';
-                    echo '<th>20/01/2023</th>';
-                    echo '<th>22/01/2023</th>';
+                      
+                        <?php  
+                          $student =  mysqli_query($conn, " SELECT * FROM `user` WHERE semester='$semester'") or die('query failed'); 
 
+                          if ($student->num_rows > 0) {  
+                                 while ($row = $student->fetch_assoc()) {
+                                    $student_id=$row['ID'];
+                                    $student_name=$row['Name']; 
+                                    $student_roll=$row['Roll'];
+                            
+                            ?>  <tr>
+                                    <td><?php echo  $student_roll; ?></td>
+                                    <td><?php echo  $student_name; ?></td>
+                           <?php 
+                              
+                                
+                             foreach ($dates_array as $date_attend) {
+                                $attendance = mysqli_query($conn, " SELECT *  FROM `attendance_sheet` WHERE assaigncourse_id='$assaigncourse_id' AND student_id='$student_id' AND date='$date_attend'") or die('query failed');
+                                if ($attendance ->num_rows > 0) {
+                                    $row = $attendance ->fetch_assoc();
+                                    $attandace_value=$row['present'];?>
+                                    <td><?php echo  $attandace_value; ?></td>
 
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<tr>';
-                        echo '<td>' . $row['Roll'] . '</td>';
-                        echo '<td>' . $row['Name'] . '</td>';
-                        echo '<td>1</td>';
-                        echo '<td>0</td>';
-                        echo '<td>1</td>';
-                        echo '<td>0</td>';
-                        echo '<td>1</td>';
-                        echo '<td>0</td>';
-                        echo '<td>1</td>';
-                        echo '</tr> ';
-                    }
-                }
-                ?>
+                             <?php  }  }
+                           ?>
+
+                        <?php ?>  </tr>
+                        <?php    }  }  ?>
             </tbody>
         </table>
     </div>

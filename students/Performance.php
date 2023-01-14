@@ -44,8 +44,7 @@ $user_type = $_SESSION['user_type'];
                                 <h6 class="card-title"><?php echo $course_title; ?></h6>
                                 <h6 class="card-subtitle mb-2 text-muted "><?php echo $course_code; ?></h6>
                                 <div>
-                                    <a href="courseAttandance.php?semester=<?php echo $course_semester; ?> && assaigncourse_id=<?php echo $assaigncourse_id; ?> " class="card-link btn btn-primary btn-sm text-white mt-2">Attendance</a>
-                                    <a href="attendanceReport.php?semester=<?php echo $course_semester; ?> && assaigncourse_id=<?php echo $assaigncourse_id; ?>" class="card-link btn btn-primary btn-sm text-white mt-2">Report</a>
+                                    <a href="coursePerformance.php?semester=<?php echo $course_semester; ?> && assaigncourse_id=<?php echo $assaigncourse_id; ?> " class="card-link btn btn-primary btn-sm text-white mt-2">See Performance</a>
                                 </div>
                             </div>
                         </div>

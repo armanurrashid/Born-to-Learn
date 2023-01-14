@@ -1,9 +1,22 @@
 <?php
 include '../assets/sidebar.php';
 include '../assets/database.php';
+
+if(isset(($_GET['semester']))){ 
+    // $date=date("Y/m/d"); 
+   
+     $semester=$_GET['semester'];
+     $assaigncourse_id=$_GET['assaigncourse_id']; 
+    
+ 
+ 
+ }
+ 
 ?>
 
 <link rel="stylesheet" href="../css//courseAttandance.css">
+
+
   <div class="team-area">
     <div class="team-container">
         <div style="padding-bottom: 25px;padding-top:80px;">
@@ -25,7 +38,41 @@ include '../assets/database.php';
                     <input type='hidden' name='thenumbers'> 
                 </div>
             </div>
-        </div>
+            <table style="margin-left: 50%;">
+         
+         <tbody>
+             <?php 
+             $result = mysqli_query($conn, " SELECT * FROM `user` WHERE semester='$semester'") or die('query failed');
+             if ($result->num_rows > 0) { ?>
+              
+                  <tr id="header" style="text-align:center;">
+                  <th >ID</th>
+                  <th>Name</th>  
+                  </tr>
+                <?php  while ($row = $result->fetch_assoc()) {
+                         $student_id=$row['ID'];
+                         $student_name=$row['Name']; 
+                         $student_roll=$row['Roll'];  
+                 
+                 ?>
+                      <tr>
+                      <td><?php echo $student_roll; ?></td>
+                      <td><?php echo $student_name; ?></td>  
+                      </tr> 
+                <?php }  } ?>
+             <tr>      
+             </tr>
+              
+         </tbody> 
+
+     </table>
+
+
+
+
+        <!-- </div>
+
+
       <table style="margin-left: 50%; margin-bottom:50px;">
             <tbody>
 
@@ -57,7 +104,7 @@ include '../assets/database.php';
                 }
                 ?>
             </tbody>
-        </table>
+        </table> -->
     </div>
   </div>
 </div>
@@ -65,10 +112,10 @@ include '../assets/database.php';
 <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
 <script>
   $(function(){
+    
     $("#thenumbers li").click(function(){
         var value = $(this).attr("value");
         $("input[name='thenumbers']").val(value);
-
         window. location. href = "addmarks.php?action=13"
     });
 });
