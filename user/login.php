@@ -22,7 +22,6 @@ include "../assets/header.php";
                 </div>
                 <div class="links">
                     <a href="#"></a>
-                    <a href="#">Forgot Password</a>
                 </div><br />
                 <div class="d-flex justify-content-around">
                     <input type="submit" class="btn btn-sm" value="Login">

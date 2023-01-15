@@ -4,7 +4,7 @@ include '../assets/database.php';
 if (isset(($_GET['semester']))) {
     // $date=date("Y/m/d"); 
     $semester = $_GET['semester'];
-    $assaigncourse_id = $_GET['assaigncourse_id'];
+    $assaigncourse_id = $_GET['assaigncourse_id']; 
 }
 function mark_performance($conn,$assaigncourse_id,$student_id){
     $mark=0;
@@ -25,7 +25,7 @@ function attandance_performance($conn,$assaigncourse_id,$student_id){
         $attandance=($student_cls/$class_totall)*100;
     }
      
-    return $attandance;
+    return ceil($attandance);
 }
 
 function course_performance($mark,$attandance){
@@ -43,10 +43,11 @@ table{
 
 </style>
 <div style="padding-bottom: 25px;padding-top:100px;">
-
+ 
     <table style="margin-left: 50%;">
 
         <tbody>
+        <?php if($assaigncourse_id!=0){  ?>
             <?php
             $result = mysqli_query($conn, " SELECT * FROM `user` WHERE semester='$semester'") or die('query failed');
             if ($result->num_rows > 0) { ?>
@@ -79,9 +80,20 @@ table{
                         </td>
                     </tr>
             <?php }
-            } ?>
+            } else{?>
+            <tr>
+                <td><h1>No Student in This Semester </h1></td>
+            </tr>
+            
+            <?php } }else{ ?> 
+                <tr>
+                <td><h1>This Course has not Started Yet! </h1></td>
+            </tr>
+
+        <?php }?>
         </tbody>
-    </table>
+    </table> 
+
 </div>
 </div>
 </div>

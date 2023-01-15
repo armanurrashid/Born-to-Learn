@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
     }else{
         mysqli_query($conn, "INSERT INTO `performance`(assaigncourse_id,student_id,mark_parform) VALUES('$assaigncourse_id', '$atn_key',$atn_value)") or die('query failed'); 
         echo "<script>
-        alert('Successfully Creted Performance Mark for The course');
+        alert('Successfully Created Performance Mark for The course');
         window.location.href='Performance.php'; 
         </script>";  
     } 
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])){
     <div style="padding-bottom: 25px;padding-top:80px;">
             <div class="row">
                 <div class="col-3"></div>
-                <div class="col-9 d-flex">
+                <div class="col-6 d-flex justify-content-around">
                      
                     <form action="../teachers/calculateMarks.php" method="post" > 
                     <?php 
@@ -94,17 +94,17 @@ if(isset($_POST['submit'])){
                     $tests_array = array();
                         if ($tests->num_rows > 0) { ?>
 
-                        <h5 class="">Select tests:</h5>
+                        <h5 class="">Select Tests:</h5>
 
                         <?php while ($row = $tests->fetch_assoc()) {
                             $test_name=$row['taste_name'] ;
                             $tests_array[]=$test_name;
                         ?> 
-                        <input class="" type="radio" name="test[<?php echo $test_name; ?>]" value="tests[<?php echo $test_name; ?>]" ><?php echo $test_name; ?></input> 
+                        <input class="mt-2" type="radio" name="test[<?php echo $test_name; ?>]" value="tests[<?php echo $test_name; ?>]" > <?php echo $test_name; ?></input> <br>
                         <input name="semester"  value="<?php echo  $semester; ?>" style="display:none;">
                         <input name="assaigncourse_id"  value="<?php echo  $assaigncourse_id; ?>" style="display:none;">  
                      <?php }?>
-                        <button class="btn btn-primary ms-auto" name="submit" type="submit" >Show</button>
+                        <button class="btn btn-primary btn-sm ms-auto button_color mt-2" name="submit" type="submit" >Show</button>
                     <?php }else{?> 
                     <h1>No Test is Provided Yet</h1>
                    <?php } ?>
@@ -118,8 +118,8 @@ if(isset($_POST['submit'])){
         </div> 
 
         <?php if($show==1){  ?> 
-    <h3 style="margin-left: 30%;">Considered Tests :<?php echo $selected_tests_names; ?></h3>
-    <table style="margin-left: 50%;">
+    <h4 style="margin-left: 20%;">Considered Tests :<?php echo $selected_tests_names; ?></h4>
+    <table style="margin-left: 50%;margin-bottom:30px;">
       <tbody> 
              <?php 
              $result = mysqli_query($conn, " SELECT * FROM `user` WHERE semester='$semester'") or die('query failed');
@@ -149,8 +149,8 @@ if(isset($_POST['submit'])){
                       </tr> 
                 <?php } ?>
                 <tr> 
-                    <td colspan="3">
-                    <button class="btn btn-primary ms-auto" name="finalsubmit" type="submit" >Submit</button>
+                    <td colspan="3" style="text-align:right;">
+                    <button class="btn btn-sm me-3 button_color" name="finalsubmit" type="submit" >Submit</button>
                     </td> 
                 </tr> 
                 </form>

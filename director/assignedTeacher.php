@@ -35,7 +35,7 @@ if (isset(($_GET['teacher_id']))) {
     }
 </style>
 <link rel="stylesheet" href="../css//Semesters.css">
-<div class="semesters-area" id="semester_id" style="padding-top:450px;">
+<div class="semesters-area" id="semester_id" style="padding-top:430px;">
     <div class="semesters-container">
         <table>
             <tbody>

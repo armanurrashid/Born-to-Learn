@@ -1,9 +1,49 @@
 <?php
 include '../assets/sidebar.php';
 include '../assets/database.php';
+$user_id =  $_SESSION['user_id']; 
 $user_name = $_SESSION['user_name']; 
 $user_mobile = $_SESSION['user_mobile']; 
 $user_email = $_SESSION['user_email']; 
+if(isset($_POST['submit'])){
+    $checkpass=$_POST['password'];
+	$password = mysqli_real_escape_string($conn, md5($_POST['password']));
+	$password_confirm= mysqli_real_escape_string($conn, md5($_POST['password_confirm'])); 
+
+	if ($password==$password_confirm) { 
+		
+	$number = preg_match('@[0-9]@', $checkpass);
+	// $uppercase = preg_match('@[A-Z]@', $checkpass);
+	// $lowercase = preg_match('@[a-z]@', $checkpass);
+	// $specialChars = preg_match('@[^\w]@', $checkpass);
+		
+		//  if(strlen($checkpass) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars){ 
+		// 	$message[] = "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+	
+		// }
+        if(strlen($checkpass) <= 8 ){ 
+            echo "<script>
+            alert('Password must be at least 8 characters');
+            window.location.href='profile.php';
+            </script>";
+		}
+        else{
+		mysqli_query($conn, "UPDATE `user` SET password='$password_confirm' WHERE ID='$user_id'") or die('query failed');
+		echo
+    "
+    <script>
+    document.location.href = '../user/logout.php';
+    </script>
+    ";
+		}
+
+   }else{ 
+    echo "<script>
+    alert('New and Confirm Password do not match Check again');
+    window.location.href='profile.php';
+    </script>";
+   }
+ }
 ?>
 
 <link rel="stylesheet" href="../css//students.css">
@@ -21,25 +61,26 @@ $user_email = $_SESSION['user_email'];
             </div>
             <div class="modal-body">
                 
-                <form action="">
+                <form action="../General/profile.php" method="post">
                     <div class="mb-3">
-                        <label class="mb-2 text-muted" for="password">Old Password</label>
+                        <label class="mb-2 text-muted" for="password">New Password</label>
                         <input id="old-password" type="password" class="form-control" name="password" value="" required>
                         
                     </div>
 
                     <div class="mb-3">
-                        <label class="mb-2 text-muted" for="password-confirm">New Password</label>
+                        <label class="mb-2 text-muted" for="password-confirm">Confirm New Password</label>
                         <input id="new-password" type="password" class="form-control" name="password_confirm" required>
                         
                     </div>
-                </form>
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button onclick="changePassword()" type="button" class="btn btn-sm" style="background-color: #293462; color:white;">
-                    Change Password
+                <button onclick="changePassword()" name="submit" type="submit" class="btn btn-sm" style="background-color: #293462; color:white;">
+                    Reset Password
                 </button>
+                </form>
             </div>
         </div>
     </div>

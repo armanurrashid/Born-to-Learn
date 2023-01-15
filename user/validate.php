@@ -5,7 +5,8 @@ include "../assets/database.php";
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $pass = mysqli_real_escape_string($conn, $_POST['password']);
 
-$select_users = mysqli_query($conn, "SELECT * FROM `user` WHERE email = '$email' AND password = '$pass'");
+function checkPass($conn,$email,$finalpass){
+    $select_users = mysqli_query($conn, "SELECT * FROM `user` WHERE email = '$email' AND password = '$finalpass'");
  
 if (mysqli_num_rows($select_users) > 0) {
  
@@ -17,10 +18,25 @@ if (mysqli_num_rows($select_users) > 0) {
     $_SESSION['user_type'] = $row['user_type'];
     $_SESSION['is_login']=1;
     $_SESSION['semester']=$row['semester'];
+    
     header("Location:../General/teachers.php");
+ 
         // echo "window.location.href('../General/students.php')";
+    
 }
 else{
-    echo "<script>alert('Email or Password is incorrect')</script>";
+    echo "<script>alert('Gmail or Password is incorrect')</script>";
     // header("Location:../user/login.php");
 }
+
+}
+if($pass=="123456"){
+    $finalpass=$pass;
+    checkPass($conn,$email,$finalpass);
+        
+}else{
+    $finalpass= mysqli_real_escape_string($conn, md5($_POST['password']));
+    checkPass($conn,$email,$finalpass);
+}
+
+ 

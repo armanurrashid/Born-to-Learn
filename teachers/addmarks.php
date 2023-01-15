@@ -2,7 +2,6 @@
 include '../assets/sidebar.php';
 include '../assets/database.php';
 if(isset(($_GET['semester']))){ 
-  // $date=date("Y/m/d"); 
  
    $semester=$_GET['semester'];
    $assaigncourse_id=$_GET['assaigncourse_id'];
@@ -37,7 +36,7 @@ if(isset($_POST['submit'])){
       } else{
           mysqli_query($conn, "INSERT INTO `course_tests`(assaigncourse_id,taste_name,student_id,marks) VALUES('$assaigncourse_id', '$test_name','$atn_key','$atn_value')") or die('query failed'); 
           echo "<script>
-          alert('Successfully Creted .$test_name.');
+          alert('Successfully Created Mark of $test_name ');
           window.location.href='showMarks.php?semester=$semester && assaigncourse_id=$assaigncourse_id'; 
           </script>"; 
       }  
@@ -53,19 +52,12 @@ if(isset($_POST['submit'])){
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-6">
-                    <!-- <a class="btn btn-primary ms-5" href="showMarks.php?action=13">Back</a> -->
-                    <h3>Mark Sheet For:<?php echo  $test_type."_".$test_no; ?></h3>
+                    <h3 class="mb-0">Mark Sheet For: <?php echo  $test_type." - ".$test_no; ?></h3>
                 </div>
             </div>
         </div>
-      <!-- <div style="padding-bottom: 25px;padding-top:100px;"> -->
-        <!-- <div  style="padding-bottom: 25px;padding-top:100px;"> -->
-         
-        
-   
 
-      <!-- </div> -->
-      <table style="margin-left: 50%;">
+      <table style="margin-left: 50%;margin-bottom: 30px;">
       <tbody>
       <form action="../teachers/addmarks.php" method="post">
              <?php 
@@ -74,7 +66,7 @@ if(isset($_POST['submit'])){
               
                   <tr id="header" style="text-align:center;">
                   
-                  <th >ID</th>
+                  <th>ID</th>
                   <th>Name</th>  
                   <th>Mark</th> 
                   </tr>
@@ -96,7 +88,7 @@ if(isset($_POST['submit'])){
                       </tr> 
                 <?php }  } ?> 
                 <tr>   
-                <td   colspan="4" style="text-align:center;"><button class="btn btn-primary btn-sm" name="submit" type="submit">Submit</button> 
+                <td colspan="4" style="text-align:right;"><button class="btn btn-primary btn-sm button_color me-5" name="submit" type="submit">Submit</button> 
                </td>       
                 </tr>
           </form>   

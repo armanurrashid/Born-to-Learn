@@ -139,9 +139,11 @@ if(isset($_POST['submit'])){
                 $result = mysqli_query($conn, " SELECT * FROM `user` WHERE semester='$semester'") or die('query failed');
                 if ($result->num_rows > 0) { ?>
                 <tr>
-                <td colspan="1" style="text-align:right;">  
-               <h4> Date:  <?php echo $date; ?></h4> 
-                 </td> 
+                <td colspan="1" style="text-align:left;">  
+               <h4 class="mb-0" style="font-size:15px;"> Date:  <?php echo $date; ?></h4> 
+               
+                 </td>
+                 
                 </tr>
                      <tr id="header" style="text-align:center;">
                      <th >ID</th>
@@ -170,18 +172,12 @@ if(isset($_POST['submit'])){
                    <?php }  } ?>
                 <tr>   
                 <td   colspan="3" style="text-align:right;">
-                 <a href="courseAttandance.php?semester=<?php echo $semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?> " class="card-link btn btn-sm text-white mt-2 button_color">Take Attendance</a>
+                 <a href="courseAttandance.php?semester=<?php echo $semester;?> && assaigncourse_id=<?php echo $assaigncourse_id;?> " class="card-link btn btn-sm text-white me-3 button_color">Take Attendance</a>
                  </td>       
                 </tr>
-                 
             </tbody> 
 
         </table>
-
-
-
-
-
             <?php }?>
     </div>
   
