@@ -18,7 +18,10 @@ function calculate($conn, $allcourses, $student_id)
         $mark_ofcourse =  mysqli_query($conn, " SELECT * FROM `performance` WHERE assaigncourse_id='$assaigncourse_id' AND student_id='$student_id'") or die('query failed');
         if ($mark_ofcourse->num_rows > 0) {
             $row = $mark_ofcourse->fetch_assoc();
-            $mark = $mark + $row['mark_parform'];
+            // $course_id= $row['assaigncourse_id'];
+            // $student_id= $row['student_id'];
+            // echo " ".$course_id." ".$student_id;
+            $mark = $mark + $row['performance'];
             $i++;
         }
     }

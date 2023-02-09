@@ -31,8 +31,15 @@ function attandance_performance($conn,$assaigncourse_id,$student_id){
 function course_performance($mark,$attandance){
     return ceil(((40*$attandance)/100) + (($mark*4*60)/100));
 }
-?>
+function update_performance($conn,$assaigncourse_id,$student_id,$Performance){
+    $mark_ofcourse =  mysqli_query($conn, " SELECT * FROM `performance` WHERE assaigncourse_id='$assaigncourse_id' AND student_id='$student_id'") or die('query failed');
+    if ($mark_ofcourse->num_rows > 0) { 
+        mysqli_query($conn, "UPDATE `performance`  SET performance='$Performance'  WHERE assaigncourse_id = '$assaigncourse_id'  AND student_id = '$student_id'") or die('query failed');
+    }
 
+}
+?>
+ 
 <link rel="stylesheet" href="../css//courseAttandance.css">
 <link rel="stylesheet" href="../css//coursePerformance.css">
 <style>
@@ -79,7 +86,7 @@ table{
                             </div>
                         </td>
                     </tr>
-            <?php }
+            <?php update_performance($conn,$assaigncourse_id,$student_id,$Performance);}
             } else{?>
             <tr>
                 <td><h1>No Student in This Semester </h1></td>

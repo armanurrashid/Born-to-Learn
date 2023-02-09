@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
         } else{
             mysqli_query($conn, "INSERT INTO `attendance_sheet`(assaigncourse_id,date,student_id,present) VALUES('$assaigncourse_id', '$date','$atn_key','$atn_value')") or die('query failed'); 
             echo "<script>
-            alert('Successfully Creted attendance on this day!');
+            alert('Successfully Created attendance on this day!');
             window.location.href='courseAttandance.php?show=1 && semester=$semester && assaigncourse_id=$assaigncourse_id && date=$date';
             </script>"; 
         }  
@@ -116,8 +116,8 @@ if(isset($_POST['submit'])){
                          
                          <td><div>
                           
-                         <input class="me-1" type="radio" name='attend[<?php echo $student_id; ?>]' value="1">Present
-                         <input class="me-1" type="radio" name='attend[<?php echo $student_id; ?>]' value="0" > Absent </div>
+                         <input class="me-1" type="radio" name='attend[<?php echo $student_id; ?>]' value="1" required>Present
+                         <input class="me-1" type="radio" name='attend[<?php echo $student_id; ?>]' value="0" required > Absent </div>
                          <input name="semester"  value="<?php echo  $semester; ?>" style="display:none;">
                          <input name="assaigncourse_id"  value="<?php echo  $assaigncourse_id; ?>" style="display:none;">  
                          </td>

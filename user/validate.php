@@ -25,7 +25,11 @@ if (mysqli_num_rows($select_users) > 0) {
     
 }
 else{
-    echo "<script>alert('Gmail or Password is incorrect')</script>";
+    echo "<script>
+            alert('Gmail or Password is incorrect');
+            window.location.href='login.php';
+            </script>";
+    // echo "<script>alert('Gmail or Password is incorrect')</script>";
     // header("Location:../user/login.php");
 }
 

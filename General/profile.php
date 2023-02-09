@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 		// 	$message[] = "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
 	
 		// }
-        if(strlen($checkpass) <= 8 ){ 
+        if(strlen($checkpass) < 8 ){ 
             echo "<script>
             alert('Password must be at least 8 characters');
             window.location.href='profile.php';
